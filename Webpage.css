@@ -1,0 +1,185 @@
+/** @format */
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: wheat;
+	height: 100%;
+}
+
+header {
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 10px 0;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+body,
+html {
+	height: 100%;
+}
+
+body {
+	overflow-y: auto;
+}
+
+/* Interactionable Lamp */
+.lamp {
+	position: relative;
+	left: 20rem;
+	bottom: 11rem;
+	margin: 0 auto;
+	width: 0.7rem;
+	height: 10rem;
+	background-image: linear-gradient(#000000b3, #000000b3),
+		linear-gradient(#000000b3, #000000b3), linear-gradient(#000000b3, #000000b3);
+	background-repeat: no-repeat;
+	background-size: 0.15rem 8rem, 0.4rem 0.8rem, 0.7rem 2rem;
+	background-position: 50% 0, 0.14rem 8rem, 0 8.8rem;
+}
+
+.lamp:before,
+.lamp:after {
+	content: "";
+	position: absolute;
+}
+
+.lamp:before {
+	left: -1.65rem;
+	bottom: -4rem;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	background: #413333ee;
+	box-shadow: inset 2px -2px 10px #5a4f4f12;
+	transition: all 0.75s;
+}
+
+.light,
+.light:before {
+	position: absolute;
+}
+
+.light {
+	top: 10.05rem;
+	left: 0.3rem;
+	width: 0;
+	height: 1.5rem;
+	border-right: 0.2rem solid #ffffff0d;
+}
+
+.light:before {
+	content: "";
+	top: 1.5rem;
+	left: -0.55rem;
+	width: 0.9rem;
+	height: 0.9rem;
+	border-radius: 50%;
+	border: 0.2rem solid #ffffff08;
+	box-shadow: 0px 0px 50px #ffffff00;
+}
+
+.switch {
+	position: absolute;
+	width: 2rem;
+	height: 2rem;
+	cursor: pointer;
+	bottom: 57em;
+	z-index: 2;
+	right: 9rem;
+	appearance: none;
+}
+
+input:checked ~ .lamp:before {
+	background: #ffffff;
+	box-shadow: 0px 2px 10px #ffffffcc, 0px 5px 50px #ffffffcc,
+		0px 8px 80px #ffffff99, 0px 8px 120px #ffffff99;
+}
+
+/* Price plan*/
+
+.pricing-table {
+	display: flex;
+	justify-content: space-around;
+	margin: 100px 0;
+}
+
+.pricing-box {
+	border: 2px solid #7d7171;
+	background-color: #333;
+	padding: 20px;
+	text-align: center;
+	position: relative;
+	height: 200px;
+}
+
+/* Set equal width for all pricing boxes */
+.pricing-box:nth-child(1),
+.pricing-box:nth-child(3) {
+	width: 20%;
+}
+
+/* Set a larger width for the middle pricing box */
+.pricing-box:nth-child(2) {
+	width: 25%;
+}
+
+.pricing-image {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 70%;
+	object-fit: cover;
+	opacity: 0.5;
+}
+
+.pricing-title,
+.pricing-price,
+.pricing-features,
+.choose-plan {
+	position: relative;
+	z-index: 1; /* Ensure text is above the background */
+}
+
+.choose-plan button {
+	padding: 10px 20px;
+	font-size: 1em;
+	background-color: #007bff;
+	color: #413636;
+	border: #413636;
+	cursor: pointer;
+}
+
+.pricing-features {
+	list-style-type: none;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+	color: whitesmoke;
+}
+
+.pricing-title {
+	font-weight: bolder;
+	font-size: larger;
+	color: whitesmoke;
+}
+
+.pricing-price {
+	font-variant: small-caps;
+	color: whitesmoke;
+}
+
+.pricing-features {
+	font-variant: small-caps;
+}
