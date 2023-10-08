@@ -29,6 +29,11 @@ html {
 body {
 	overflow-y: auto;
 }
+/* Media query for smaller screens (e.g., phones) */
+@media only screen and (max-width: 600px) {
+  body {
+    /* Adjust styles for smaller screens */
+  }
 
 /* Interactionable Lamp */
 .lamp {
